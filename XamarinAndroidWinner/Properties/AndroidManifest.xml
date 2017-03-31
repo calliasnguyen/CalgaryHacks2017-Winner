@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Hackathon.Hackathon" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="24" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<permission android:name="hackathon.hackathon.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="hackathon.hackathon.permission.C2D_MESSAGE" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<application android:label="Hackathon" android:theme="@style/MyCustomTheme">
+		<receiver android:name="com.onesignal.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="Hackathon.Hackathon" />
+			</intent-filter>
+		</receiver>
+	</application>
+</manifest>
